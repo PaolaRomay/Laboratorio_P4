@@ -48,3 +48,16 @@ cout<<"RESERVAS NO CANCELADAS"<<endl;
         cout<<"Codigo:"<<current->getCodigo()<<endl;
     }
 }
+void Huesped::setEstadia(Estadia* nueva){
+this->estadias.insert(nueva);
+}
+set<Estadia*> Huesped::getEstadias(){
+    cout<<"LAS ESTADIAS DEL HUESPED SON:"<<endl;
+    set<Estadia*> est = this->estadias;
+    for(set<Estadia*>::iterator itr =est.begin(); itr!= est.end(); ++itr){
+        Estadia* current = *itr;
+        cout<< "codigo:"<<current->getCodigoEstadia()<<endl;
+        cout<<"El hostal asociado es:  "<<current->getHostal()<<endl;
+    }
+    return this->estadias;
+}

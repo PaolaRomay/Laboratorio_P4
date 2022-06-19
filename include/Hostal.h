@@ -22,7 +22,7 @@ private:
 	int telefono;
 	//set<Empleado> empleados_Hostal;
 	map<int,Habitacion*> habitaciones; // no era un puntero a habitaciones, le puse yo(maxi) para poder hacer NULL
-	set<Calificacion> *calificaciones;//no era un puntero a calificaciones, le puse yo(maxi) para poder hacer NULL
+	//set<Calificacion> *calificaciones;//no era un puntero a calificaciones, le puse yo(maxi) para poder hacer NULL
 	// set<Reserva> *reservas;//no era un puntero a reservas, le puse yo(maxi) para poder hacer NULL
 
 public:

@@ -6,6 +6,9 @@
 #include <set>
 
 using namespace std;
+#include <iostream>
+#include <string>
+
 
 class DtaHostal;
 
@@ -149,12 +152,13 @@ void ReservaController::confirmarBajaDeReserva(int codigoBaja,string hos) {
 
 
 
-
+string mail;
 Huesped* ReservaController:: ingresarEmailHuesped(string emailHuesped){
     
    UsuarioController *u= UsuarioController::getInstance();
  map<string,Huesped*> buscar = u->obtenerHuespedesRegistrados();
   Huesped* res = buscar.find(emailHuesped)->second;
+  mail = emailHuesped;
   return res;
 } 
 
@@ -163,24 +167,32 @@ void ReservaController::MostrarReservasNoCanceladas(Huesped* emailHues){
 usrs->MostrarReservasNoCanceladas(emailHues->getEmail());
 }
 
+
+///////////////////////////REGISTRAR ESTADIA//////////////////////////////////////////////////////////////////
+    int i = 0;
     int numeroHabitacion;
-void ReservaController::seleccionarReserva(string nombreHost, Huesped* huespedEstadia,int reserva,Hostal* h){
+void ReservaController::seleccionarReserva(string nombreHost, Huesped* huespedEstadia,int reserva){
+    HostalController *h = HostalController::getInstance();
+      Hostal* res = h->obtenerInstanciaHostal(nombreHost);
     Reserva * buscada = reservas.find(reserva)->second;
-    map<int,Habitacion*> aux = h->getHabitaciones();
+    map<int,Habitacion*> aux = res->getHabitaciones();
     for(map<int,Habitacion*>::iterator i = aux.begin(); i!= aux.end(); ++i){
       map<int,Reserva*> reservas =  i->second->getReservas();
      if( reservas.find(reserva) != reservas.end()){ //////esta la reserva en esa habitacion me tengo q quedar con el numero
        numeroHabitacion = i->second->getNumHab();
+
      }
     }
-    // Estadia(string, Huesped *, Reserva *, int, DataFecha, DataFecha, string);
-// usrs->reserva->MostrarReservasNoCanceladas(hues);
-// Estadia nueva =
+ 
+   
+    string codigo ;
+    codigo = "estadia"+ to_string(i);
+DataFecha coInicio(0,0,0,0);
 
+    Estadia *nueva = new Estadia(nombreHost, huespedEstadia, buscada, numeroHabitacion, buscada->getCheckIn(), coInicio, codigo);
+    i++;
+     codigo = "estadia"+ to_string(i);
+cout<<"se crea la estadia de codigo "<< codigo<< endl;
 
-}
-Hostal * ReservaController::seleccionarHostal3(string nomh){
-//     HostalController *h = HostalController::getInstance();
-//     Hostal* res = h->seleccionarHostal2(nomh);
-// return res;
+usrs->setEstadia(nueva,mail);
 }

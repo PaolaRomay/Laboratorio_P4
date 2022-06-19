@@ -44,6 +44,7 @@ public:
 	// virtual void ingresarComentario(string) = 0;
 	// virtual void setReservaHabitacion(Reserva*,string,int);
 	virtual DataInfoBasicaHostal obtenerInformacionBasicaHostal() = 0;
+
 };
 
 #endif

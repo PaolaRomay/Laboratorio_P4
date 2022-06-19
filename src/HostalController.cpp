@@ -418,3 +418,18 @@ void HostalController::bajaReservaDeHab(int codigoBaja, string nombreHostal)
     cout<<"anda";
    }
 }
+
+Hostal* HostalController::obtenerInstanciaHostal(string inst_hos){
+map<string, Hostal *>::iterator itr = hostales.find(inst_hos);
+
+    if (itr != hostales.end())
+    {
+   return itr->second;
+    }
+    else
+    {
+        cout << inst_hos << " no encontrado\n";
+        return 0;
+    }
+    
+}

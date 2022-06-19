@@ -220,3 +220,11 @@ void UsuarioController::MostrarReservasNoCanceladas(string huespedAConsultar){
      }
 
 }
+void UsuarioController::setEstadia(Estadia* nueva,string mail){
+     Huesped* registrado = huespedes.find(mail)->second;
+     if( huespedes.find(mail) != huespedes.end() ){
+        registrado->setEstadia(nueva);
+     }
+     registrado->getEstadias();
+}
+

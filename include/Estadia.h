@@ -5,33 +5,34 @@
 #include "../dataTypes/DataFecha.h"
 #include "Huesped.h"
 #include "Reserva.h"
-#include "Calificacion.h"
-#include "../dataTypes/DataEstadia.h"
+// #include "Calificacion.h"
+// #include "../dataTypes/DataEstadia.h"
 using namespace std;
-
+class Huesped;
+class Reserva; 
 class Estadia
 {
 private:
-	// string hostal;
-	// Huesped *huesped;
-	// Reserva *reserva;
+	string hostal;
+	Huesped *huesped;
+	Reserva *reserva;
 	// Calificacion *calificacion;
-	// int habitacion;
-	// DataFecha checkIn;
-	// DataFecha checkOut;
-	// string codigoEstadia;
+	int habitacion;
+	DataFecha checkIn;
+	DataFecha checkOut;
+	string codigoEstadia;
 	// int codigoPromo;
 
 public:
-	// Estadia(string, Huesped *, Reserva *, int, DataFecha, DataFecha, string);
-	// string getHostal();
-	// Huesped *getHuesped();
-	// Reserva *getReserva();
+	 Estadia(string, Huesped *, Reserva *, int, DataFecha, DataFecha, string);
+	string getHostal();
+	Huesped *getHuesped();
+	Reserva *getReserva();
 	// Calificacion *getCalificacion();
-	// int getHabitacion();
-	// DataFecha getCheckIn();
-	// DataFecha getCheckOut();
-	// string getCodigoEstadia();
+	int getHabitacion();
+	DataFecha getCheckIn();
+	DataFecha getCheckOut();
+	string getCodigoEstadia();
 	// int getCodigoPromo();
 	// string setHostal(string);
 	// void *setHuesped(Huesped);

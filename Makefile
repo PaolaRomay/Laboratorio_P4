@@ -1,8 +1,8 @@
 CC = g++
 CFLAGS = -g -w -Wall
 
-main: main.o HostalController.o Fabrica.o Hostal.o UsuarioController.o Usuario.o Huesped.o Empleado.o DataUsuario.o DataEmpleado.o DataHuesped.o DtEmpleado.o Habitacion.o DtDescripcion.o DataDescripcion.o DataHabitacion.o DataInfoBasicaHostal.o DatasHostal.o ReservaController.o DtaHostal.o DataFecha.o Reserva.o ReservaIndividual.o ReservaGrupal.o
-	$(CC) $(CFLAGS) -o main main.o HostalController.o Fabrica.o Hostal.o UsuarioController.o Usuario.o Huesped.o Empleado.o DataUsuario.o DataEmpleado.o DataHuesped.o DtEmpleado.o Habitacion.o DtDescripcion.o DataDescripcion.o DataHabitacion.o DataInfoBasicaHostal.o DatasHostal.o ReservaController.o DtaHostal.o DataFecha.o Reserva.o ReservaIndividual.o ReservaGrupal.o
+main: main.o HostalController.o Fabrica.o Hostal.o UsuarioController.o Usuario.o Huesped.o Empleado.o DataUsuario.o DataEmpleado.o DataHuesped.o DtEmpleado.o Habitacion.o DtDescripcion.o DataDescripcion.o DataHabitacion.o DataInfoBasicaHostal.o DatasHostal.o ReservaController.o DtaHostal.o DataFecha.o Reserva.o ReservaIndividual.o ReservaGrupal.o Estadia.o
+	$(CC) $(CFLAGS) -o main main.o HostalController.o Fabrica.o Hostal.o UsuarioController.o Usuario.o Huesped.o Empleado.o DataUsuario.o DataEmpleado.o DataHuesped.o DtEmpleado.o Habitacion.o DtDescripcion.o DataDescripcion.o DataHabitacion.o DataInfoBasicaHostal.o DatasHostal.o ReservaController.o DtaHostal.o DataFecha.o Reserva.o ReservaIndividual.o ReservaGrupal.o Estadia.o
 
 Hostal.o: include/Hostal.h	src/Hostal.cpp
 	$(CC) $(CFLAGS) -c src/Hostal.cpp
@@ -72,6 +72,9 @@ UsuarioController.o: include/IUsuarioController.h include/UsuarioController.h sr
 
 Fabrica.o: include/Fabrica.h src/Fabrica.cpp
 	$(CC) $(CFLAGS) -c src/Fabrica.cpp
+
+Estadia.o: include/Estadia.h src/Estadia.cpp
+	$(CC) $(CFLAGS) -c src/Estadia.cpp
 
 clean:
 	rm -f core *.o

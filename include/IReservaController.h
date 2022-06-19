@@ -27,13 +27,13 @@ public:
 
 	virtual Huesped* ingresarEmailHuesped(string) = 0;
 	// virtual set<int> listarReservas() = 0;
-	virtual Hostal* seleccionarHostal3(string)=0;
+
 	virtual void obtenerReservas() = 0;
 	virtual void obtenercodReservas() = 0;
 	//virtual void cancelarBajaDeReserva() = 0;
 	virtual void confirmarBajaDeReserva(int,string) = 0;
 virtual void MostrarReservasNoCanceladas(Huesped*)=0;
-virtual void seleccionarReserva(string,Huesped*,int,Hostal*)=0;
+virtual void seleccionarReserva(string,Huesped*,int)=0;
 
 };
 

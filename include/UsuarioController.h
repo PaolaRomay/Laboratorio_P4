@@ -51,6 +51,7 @@ public:
 	// string darHostalTrabaja(string);
 	// void bajaReservaDeHuesp(int,set<string>) ;
 	void MostrarReservasNoCanceladas(string);
+	void setEstadia(Estadia*,string);
 };
 
 #endif

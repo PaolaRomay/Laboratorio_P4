@@ -1,5 +1,6 @@
 #ifndef RESERVACONTROLLER
 #define RESERVACONTROLLER
+#include <bits/stdc++.h>
 #include <string>
 #include <set>
 #include "Reserva.h"
@@ -27,7 +28,7 @@ public:
 	static ReservaController *getInstance();
 	set<DtaHostal*> obtenerHostalesRegistrados();
 	void seleccionarHostal(string, DataFecha, DataFecha, bool);
-	Hostal* seleccionarHostal3(string);
+
 	set<int> obtenerHabitacionesDisponibles();
 	void seleccionarHabitacion(int);
 	void seleccionarNombreHostal(string nombre);
@@ -40,7 +41,7 @@ public:
 	Huesped* ingresarEmailHuesped(string);
 	// set<int> listarReservas();
 
-	void seleccionarReserva(string,Huesped*,int,Hostal*);
+	void seleccionarReserva(string,Huesped*,int);
 	void obtenerReservas();
 	void obtenercodReservas();
  void MostrarReservasNoCanceladas(Huesped*);

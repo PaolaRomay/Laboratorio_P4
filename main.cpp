@@ -415,7 +415,7 @@ else{
                 cout << "Ingrese el nombre del Hostal seleccionado:"<<endl;
                 string nombreHostal;
                 cin >> nombreHostal;
-             Hostal *res = reserva->seleccionarHostal3(nombreHostal);
+             reserva->seleccionarNombreHostal(nombreHostal);
                
 
 		 //INGRESO EMAIL HUESPED
@@ -444,7 +444,7 @@ else{
                 int idReserva;
                 cin >> idReserva;
                 // Estadia(string, Huesped *, Reserva *, int, DataFecha, DataFecha, string);
-                reserva->seleccionarReserva(nombreHostal,hues,idReserva,res);
+                reserva->seleccionarReserva(nombreHostal,hues,idReserva);
         //TENEMOS HOSTAL, NOMBRE HUESPED, Y CODIGO RESERVA PARA PODER REGISTRAR ESTADIA
 
 

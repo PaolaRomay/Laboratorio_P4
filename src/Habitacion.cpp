@@ -28,18 +28,18 @@ int Habitacion::getNumHab()
 int cont = 0;
 bool Habitacion::getReservasDisponibles(DataFecha ci, DataFecha co)
 {
-    // map<int, Reserva *> *current = reservas;
-    // for (map<int, Reserva *>::iterator itr = current->begin(); itr != current->end(); ++itr)
-    // {
+    map<int, Reserva *> current = reservas;
+    for (map<int, Reserva *>::iterator itr = current.begin(); itr != current.end(); ++itr)
+    {
 
-    //     Reserva *current = itr->second;
-    //     if (co < current->getCheckIn() || current->getCheckOut() < ci)
-    //     {
-    //         cont++;
-    //     }
-    // }
+        Reserva *current = itr->second;
+        if (co < current->getCheckIn() || current->getCheckOut() < ci)
+        {
+            cont++;
+        }
+    }
 
-    // return cont == reservas->size();
+    return cont == reservas.size();
 }
 
 void Habitacion::setReservas(int codigo, Reserva *nueva)

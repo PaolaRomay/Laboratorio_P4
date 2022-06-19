@@ -24,7 +24,7 @@ class Huesped : public Usuario
 private:
 	bool finger;
 	//Calificacion *calificacion;
-	//set<Estadia> estadias;
+	set<Estadia*> estadias;
 	map<int,Reserva*> reservas;
 
 public:
@@ -34,8 +34,8 @@ public:
 	void setReserva(Reserva *);
 	// Calificacion getCalificacion();
 	// void setCalificacion(Calificacion);
-	// set<Estadia> getEstadias();
-	// void setEstadias();
+	set<Estadia*> getEstadias();
+	void setEstadia(Estadia*);
 	map<int,Reserva*> getReservas();
 	// set<DataDescripcion> obtenerEstadias();
 	// bool estadiaUsrActiva();

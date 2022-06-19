@@ -60,6 +60,7 @@ void  seleccionarHostal2(string);
 	void setReservaHabitacion(Reserva*,string,int);
 	void darcodReservas(string aConsultar);
 	void bajaReservaDeHab(int, string);
+	Hostal* obtenerInstanciaHostal(string);
 };
 
 #endif
